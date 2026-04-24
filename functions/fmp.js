@@ -17,7 +17,7 @@ export async function onRequest(context) {
   const action = url.searchParams.get('action') || '';
   const ticker = (url.searchParams.get('ticker') || '').toUpperCase().trim();
   const period = url.searchParams.get('period') || '3m';
-  const key = env.AV_API_KEY;
+ const key = env.AV_API_KEY || 'EFXFYVL59Q2BT1PJ';
   if (!key) return json({ error: 'AV_API_KEY not set' }, 500, corsHeaders);
 
   try {
